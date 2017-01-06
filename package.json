@@ -1,6 +1,6 @@
 {
   "name": "git-hooks-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "让你能够使用node方式编写git-hooks",
   "main": "index.js",
   "scripts": {
