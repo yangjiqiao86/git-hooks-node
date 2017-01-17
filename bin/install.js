@@ -62,18 +62,34 @@ function addNpmScripts() {
   let projectPkg = path.join(projectDir, 'package.json');
 
   if (fs.existsSync(projectPkg)) {
+    let errors = [];
     let pkg = JSON.parse(fs.readFileSync(projectPkg, 'utf8'));
-    pkg.scripts = pkg.scripts || {};
+    let scripts = pkg.scripts || {};
 
     for (let key in hooksMap) {
       if (hooksMap.hasOwnProperty(key)) {
-        pkg.scripts[key] = 'node ./hooks/' + hooksMap[key] + '.js' + (pkg.scripts[key] ? ' && ' + pkg.scripts[key] : '');
+        let command = 'node ./hooks/' + hooksMap[key] + '.js';
+
+        if (!scripts[key]) {
+          scripts[key] = command;
+        } else {
+          if (!scripts[key].match(command)) {
+            scripts[key] += ' && ' + command;
+          } else {
+            errors.push('Script ' + key + ' is already exists!\n');
+          }
+        }
       }
     }
 
     fs.writeFileSync(projectPkg, JSON.stringify(pkg, null, 2));
     console.log(chalk.cyan('Npm scripts added!'));
-    deferred.resolve();
+
+    if (errors.length) {
+      deferred.reject(errors.join(''));
+    } else {
+      deferred.resolve();
+    }
   } else {
     deferred.reject('Could not find package.json!');
   }

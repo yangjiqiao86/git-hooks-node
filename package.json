@@ -6,7 +6,25 @@
   "scripts": {
     "install": "node ./bin/install.js",
     "uninstall": "node ./bin/uninstall.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "applypatchmsg": "node ./hooks/applypatch-msg.js && node ./hooks/applypatch-msg.js && node ./hooks/applypatch-msg.js && node ./hooks/applypatch-msg.js",
+    "commitmsg": "node ./hooks/commit-msg.js && node ./hooks/commit-msg.js && node ./hooks/commit-msg.js && node ./hooks/commit-msg.js",
+    "postapplypatch": "node ./hooks/post-applypatch.js && node ./hooks/post-applypatch.js && node ./hooks/post-applypatch.js && node ./hooks/post-applypatch.js",
+    "postcheckout": "node ./hooks/post-checkout.js && node ./hooks/post-checkout.js && node ./hooks/post-checkout.js && node ./hooks/post-checkout.js",
+    "postcommit": "node ./hooks/post-commit.js && node ./hooks/post-commit.js && node ./hooks/post-commit.js && node ./hooks/post-commit.js",
+    "postmerge": "node ./hooks/post-merge.js && node ./hooks/post-merge.js && node ./hooks/post-merge.js && node ./hooks/post-merge.js",
+    "postreceive": "node ./hooks/post-receive.js && node ./hooks/post-receive.js && node ./hooks/post-receive.js && node ./hooks/post-receive.js",
+    "postrewrite": "node ./hooks/post-rewrite.js && node ./hooks/post-rewrite.js && node ./hooks/post-rewrite.js && node ./hooks/post-rewrite.js",
+    "postupdate": "node ./hooks/post-update.js && node ./hooks/post-update.js && node ./hooks/post-update.js && node ./hooks/post-update.js",
+    "preapplypatch": "node ./hooks/pre-applypatch.js && node ./hooks/pre-applypatch.js && node ./hooks/pre-applypatch.js && node ./hooks/pre-applypatch.js",
+    "preautogc": "node ./hooks/pre-auto-gc.js && node ./hooks/pre-auto-gc.js && node ./hooks/pre-auto-gc.js && node ./hooks/pre-auto-gc.js",
+    "precommit": "node ./hooks/pre-commit.js && node ./hooks/pre-commit.js && node ./hooks/pre-commit.js && node ./hooks/pre-commit.js",
+    "prepush": "node ./hooks/pre-push.js && node ./hooks/pre-push.js && node ./hooks/pre-push.js && node ./hooks/pre-push.js",
+    "prerebase": "node ./hooks/pre-rebase.js && node ./hooks/pre-rebase.js && node ./hooks/pre-rebase.js && node ./hooks/pre-rebase.js",
+    "prereceive": "node ./hooks/pre-receive.js && node ./hooks/pre-receive.js && node ./hooks/pre-receive.js && node ./hooks/pre-receive.js",
+    "preparecommitmsg": "node ./hooks/prepare-commit-msg.js && node ./hooks/prepare-commit-msg.js && node ./hooks/prepare-commit-msg.js && node ./hooks/prepare-commit-msg.js",
+    "pushtocheckout": "node ./hooks/push-to-checkout.js && node ./hooks/push-to-checkout.js && node ./hooks/push-to-checkout.js && node ./hooks/push-to-checkout.js",
+    "update": "node ./hooks/update.js && node ./hooks/update.js && node ./hooks/update.js && node ./hooks/update.js"
   },
   "repository": {
     "type": "git",
