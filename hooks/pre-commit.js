@@ -1,11 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Git-hooks pre-commit 检查代码冲突
- * @author 李永凯（liyongkai@xiaoyouzi.com）
- * @log
- */
-
 'use strict';
 
 const execSync = require('child_process').execSync;

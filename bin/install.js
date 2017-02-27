@@ -1,7 +1,3 @@
-/**
- * Git-hooks
- */
-
 'use strict';
 
 var fs = require('fs');
