@@ -12,24 +12,24 @@ var projectDir = path.join(__dirname, '..', '..', '..');
 // Hooks Map
 // Git hook | Npm script
 var hooksMap = {
-  applypatchmsg: 'applypatch-msg',
-  commitmsg: 'commit-msg',
-  postapplypatch: 'post-applypatch',
-  postcheckout: 'post-checkout',
-  postcommit: 'post-commit',
-  postmerge: 'post-merge',
-  postreceive: 'post-receive',
-  postrewrite: 'post-rewrite',
-  postupdate: 'post-update',
-  preapplypatch: 'pre-applypatch',
-  preautogc: 'pre-auto-gc',
-  precommit: 'pre-commit',
-  prepush: 'pre-push',
-  prerebase: 'pre-rebase',
-  prereceive: 'pre-receive',
-  preparecommitmsg: 'prepare-commit-msg',
-  pushtocheckout: 'push-to-checkout',
-  update: 'update',
+  // applypatchmsg: 'applypatch-msg',
+  // commitmsg: 'commit-msg',
+  // postapplypatch: 'post-applypatch',
+  // postcheckout: 'post-checkout',
+  // postcommit: 'post-commit',
+  // postmerge: 'post-merge',
+  // postreceive: 'post-receive',
+  // postrewrite: 'post-rewrite',
+  // postupdate: 'post-update',
+  // preapplypatch: 'pre-applypatch',
+  // preautogc: 'pre-auto-gc',
+  // precommit: 'pre-commit',
+  prepush: 'pre-push'
+  // prerebase: 'pre-rebase',
+  // prereceive: 'pre-receive',
+  // preparecommitmsg: 'prepare-commit-msg',
+  // pushtocheckout: 'push-to-checkout',
+  // update: 'update',
 };
 
 /**
