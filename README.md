@@ -9,6 +9,17 @@
 npm install git-hooks-node --save-dev
 ```
 
+```javascript
+// Edit package.json
+{
+  "scripts": {
+    "prepushtag": "npm run publish",
+    "prepushbranch": "npm run test",
+    "...": "..."
+  }
+}
+```
+
 
 ## Uninstall
 
