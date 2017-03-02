@@ -45,8 +45,24 @@ PrePush.prototype.init = function() {
 PrePush.prototype.getBranchName = function() {
   let deferred = Q.defer();
 
-  // https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback
-  exec('git symbolic-ref --short HEAD', (error, stdout, stderr) => {
+  // https://git-scm.com/book/zh/v1/Git-%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86-Git-References
+  // http://stackoverflow.com/questions/27615126/print-symbolic-name-for-head
+  // https://stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git
+  // git symbolic-ref --short HEAD
+  // git symbolic-ref -q --short HEAD || git name-rev --name-only HEAD
+  // git symbolic-ref -q --short HEAD || git describe --all --always HEAD
+  // git symbolic-ref HEAD
+  // git rev-parse --abbrev-ref HEAD
+  // git branch | sed -n '/\* /s///p'
+  // git describe --all
+  // git branch | grep \* | cut -d ' ' -f2-
+  // git branch | sed -n '/\* /s///p'
+  // git reflog HEAD | grep 'checkout:' | head -1 | awk '{print $NF}'
+  // git reflog | awk '$3=="checkout:" {print $NF; exit}'
+  // git status | head -1
+  // git status | head -1 | awk '{print $NF}'
+  // 上面的方法亲测，除最后一个方法没有测出问题之外，其它方法或多或少都有问题
+  exec("git status | head -1 | awk '{print $NF}'", (error, stdout, stderr) => {
     if (error) {
       deferred.reject(error);
     } else {
