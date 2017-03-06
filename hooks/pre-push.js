@@ -156,6 +156,7 @@ PrePush.prototype.prePushTag = function(data) {
       this.autoMergeMaster(data);
     } else {
       console.log(chalk.red('npm run prepushtag failure'));
+      process.exit(1);
     }
   });
 };
@@ -174,6 +175,7 @@ PrePush.prototype.prePushBranch = function(data) {
       console.log(chalk.green('npm run prepushbranch success'));
     } else {
       console.log(chalk.red('npm run prepushbranch failure'));
+      process.exit(1);
     }
   });
 };

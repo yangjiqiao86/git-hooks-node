@@ -13,8 +13,9 @@ npm install git-hooks-node --save-dev
 // Edit package.json
 {
   "scripts": {
+    "prepush": "node ./hooks/pre-push.js",
     "prepushtag": "npm run publish",
-    "prepushbranch": "npm run test",
+    "prepushbranch": "npm test",
     "...": "..."
   }
 }
